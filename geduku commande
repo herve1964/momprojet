@@ -1,0 +1,3 @@
+git add .
+git commit -m "base de donnee "
+git push origin main
