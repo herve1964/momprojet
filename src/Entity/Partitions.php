@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\NomRepository;
+use App\Repository\PartitionsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=NomRepository::class)
+ * @ORM\Entity(repositoryClass=PartitionsRepository::class)
  */
-class Nom
+class Partitions
 {
     /**
      * @ORM\Id
@@ -25,7 +25,12 @@ class Nom
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $prenom;
+    private $interprete;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $chemin;
 
     public function getId(): ?int
     {
@@ -44,14 +49,26 @@ class Nom
         return $this;
     }
 
-    public function getPrenom(): ?string
+    public function getInterprete(): ?string
     {
-        return $this->prenom;
+        return $this->interprete;
     }
 
-    public function setPrenom(string $prenom): self
+    public function setInterprete(string $interprete): self
     {
-        $this->prenom = $prenom;
+        $this->interprete = $interprete;
+
+        return $this;
+    }
+
+    public function getChemin(): ?string
+    {
+        return $this->chemin;
+    }
+
+    public function setChemin(string $chemin): self
+    {
+        $this->chemin = $chemin;
 
         return $this;
     }
