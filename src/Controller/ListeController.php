@@ -14,7 +14,7 @@ class ListeController extends AbstractController
      */
     public function index(PartitionsRepository $partitionsRepository): Response
     {
-        $Partitions = $partitionsRepository->findBy([], [], 10);
+        $Partitions = $partitionsRepository->findAll();
 
         return $this->render('liste/index.html.twig', [
             'partitions' => $Partitions,
