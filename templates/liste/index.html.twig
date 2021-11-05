@@ -18,21 +18,18 @@
 	</style>
 
 	<div class="example-wrapper">
-		<h1>Hello
-			{{ controller_name }}! ✅</h1>
 
-		Ce petit message vient de :
-		<ul>
-			<li>Your controller at
-				<code>
-					<a href="{{ '/home/fernandes/Bureau/Projets/Projets/monprojet/src/Controller/ListeController.php'|file_link(0) }}">src/Controller/ListeController.php</a>
-				</code>
-			</li>
-			<li>Your template at
-				<code>
-					<a href="{{ '/home/fernandes/Bureau/Projets/Projets/monprojet/templates/liste/index.html.twig'|file_link(0) }}">templates/liste/index.html.twig</a>
-				</code>
-			</li>
-		</ul>
-	</div>
-{% endblock %}
+
+		<h1>Liste des partitions</h1>
+		<div class="row">
+			{% for p in partitions %}
+				<div class="col">
+					<p>Nom de la partitions :
+						{{ p.nom}}
+						Interprete :
+						{{p.interprete}}
+						Chemin :{{p.chemin}}</p>
+				</div>
+			{% endfor %}
+		</div>
+	{% endblock body %}
