@@ -24,11 +24,16 @@
 		<div class="row">
 			{% for p in partitions %}
 				<div class="col">
-					<p>Nom de la partitions :
-						{{ p.nom}}
-						Interprete :
-						{{p.interprete}}
-						Chemin :{{p.chemin}}</p>
+					<p>
+						<a>Nom de la partitions :
+							{{ p.nom}}</a>
+						<a>Interprete :
+							{{p.interprete}}</a>
+						<a href={{p.chemin}}>
+							chemin :
+							{{p.chemin}}
+						</a>
+					</p>
 				</div>
 			{% endfor %}
 		</div>
